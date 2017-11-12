@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Юля Шестова](https://up.htmlacademy.ru/htmlcss/19/user/312075).
-* Наставник: Сергей Рубец.
+* Наставник: [Сергей Рубец](https://htmlacademy.ru/profile/amator).
 
 ---
 

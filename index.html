@@ -50,20 +50,20 @@
                     <h3>Веб-сайты</h3>
                     <p>Мир никогда не будет прежним после того как увидит ваш сайт!</p>
                     <img src="img/illustration-1.jpg" width="300" height="146" alt="Веб-сайты">
-                    <a class="button" href="order.html">Заказать</a>
+                    <button class="button" type="button">Заказать</button>
                 </li>
                 <li class="service-item">
                     <h3>Приложения</h3>
                     <p>Покорите топ-10 приложений в AppStore и Google Play</p>
                     <img src="img/illustration-2.jpg" width="300" height="146" alt="Приложения">
-                    <a class="button" href="order.html">Заказать</a>
+                    <button class="button" type="button">Заказать</button>
                 </li>
                 <li class="service-item">
                     <h3>Презентации</h3>
                     <p>Вы даже не подозреваете, насколько вы изумительны!
                     </p>
                     <img src="img/illustration-3.jpg" width="300" height="146" alt="Презентации">
-                    <a class="button" href="order.html">Заказать</a>
+                    <button class="button" type="button">Заказать</button>
                 </li>
             </ul>
         </section>
@@ -118,12 +118,34 @@
     </main>
     <footer class="main-footer">
         <section class="map">
-            <!-- Здесь будет скрипт карты -->
+            <h2 class="visually-hidden">Как до нас добраться</h2>
+            <p>
+                <img src="img/map.jpg" width="1440" height="416" alt="191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 тел. +7 (812) 275-75-75">
+            </p>
             <div>
                 <h4>nёrds design studio</h4>
                 <p>191186, Санкт-Петербург,<br> ул. Б. Конюшенная, д. 19/8</p>
-                <p>тел. +7 (812) 275-75-75</p>
-                <a class="button modal">Напишите нам</a>
+                <p>тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p>
+                <button class="button modal" type="button">Напишите нам</button>
+                <section class="modal write-us">
+                    <span class="h1">Напишите нам</span>
+                    <form class="write-us-form" action="https://echo.nerds.ru" method="post">
+                        <p class="write-us-item">
+                            <label for="write-us-name">Ваше имя:</label>
+                            <input id="write-us-name" type="text" name="name" value="" placeholder="Представьтесь, пожалуйста">
+                        </p>
+                        <p class="write-us-item">
+                            <label for="write-us-e-mail">Ваш e-mail:</label>
+                            <input id="write-us-e-mail" type="text" name="e-mail" value="" placeholder="Для отправки отчетов">
+                        </p>
+                        <p class="write-us-item">
+                            <label for="write-us-comment">Текст письма:</label>
+                            <input id="write-us-comment" type="text" name="comment" value="" placeholder="В свободной форме">
+                        </p>
+                        <button class="button" type="submit">Отправить</button>
+                    </form>
+                    <button class="modal-close" type="button">Закрыть</button>
+                </section>
             </div>
         </section>
         <div class="footer-social">

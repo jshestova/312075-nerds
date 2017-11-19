@@ -26,10 +26,68 @@
     <main class="container">
         <section class="filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
-            <!-- Здесь будет форма -->
+            <form class="filter" method="get" action="https://echo.nerds.ru">
+                <fieldset>
+                    <legend>Стоимость:</legend>
+                    <ul>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-range" type="range" step="1" min="0" max="25000" step="1000" id="filter-range" name="range">
+                            <label class="visually-hidden" for="filter-range">Диапазон</label>
+                        </li>
+                        <li class="filter-option">
+                            <label for="filter-from">От</label>
+                            <input class="visually-hidden filter-input filter-input-number" type="number" name="from" value=" " id="filter-from" checked>
+                        </li>
+                        <li class="filter-option">
+                            <label for="filter-to">До</label>
+                            <input class="visually-hidden filter-input filter-input-number" type="number" name="to" value=" " id="filter-to">
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset>
+                    <legend>Сетка:</legend>
+                    <ul>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid " value="adaptive" id="filter-adaptive">
+                            <label for="filter-adaptive">Адаптивная</label>
+                        </li>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid " value="fix" id="filter-fix">
+                            <label for="filter-fix">Фиксированная</label>
+                        </li>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid " value="flex" id="filter-flex">
+                            <label for="filter-flex ">Резиновая</label>
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset>
+                    <legend>Особенности:</legend>
+                    <ul>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="slider" id="slider" checked><label for="slider">Слайдер</label>
+                        </li>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="benefits" id="benefits"><label for="benefits">Блок преимуществ</label>
+                        </li>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="news" id="news" checked><label for="news">Новости</label>
+                        </li>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="gallery" id="gallery">
+                            <label for="gallery">Галерея</label>
+                        </li>
+                        <li class="filter-option">
+                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="cart" id="card">
+                            <label for="cart">Корзина</label>
+                        </li>
+                    </ul>
+                </fieldset>
+                <button type="submit" class="filter-button button">Показать</button>
+            </form>
         </section>
         <section>
-            <ul class="view">
+            <ul class="view ">
                 <li class="view-current">По цене</li>
                 <li><a href="#">По типу</a></li>
                 <li><a href="#">По названию</a></li>
@@ -40,14 +98,14 @@
             <ul class="catalog-list">
                 <li class="catalog-item-hover">
                     <p class="browser-item-image-hover">
-                        <a href="catalog-item.html">
-                            <img src="img/img-sedona.jpg" width="360" height="575" alt="Информационный сайт для туристов Sedona">
+                        <a href="catalog-item.html ">
+                            <img src="img/img-sedona.jpg" width="360" height="575" alt="Информационный сайт для туристов Sedona ">
                         </a>
                     </p>
                     <div>
                         <h3 class="catalog-item-title">Sedona</h3>
                         <span class="catalog-item-description">Информационный сайт для туристов</span>
-                        <a class="button" href="#">9 900 руб.</a>
+                        <a class="button " href="#">9 900 руб.</a>
                     </div>
                 </li>
                 <li class="catalog-item">
@@ -67,7 +125,7 @@
                 <li class="catalog-item">
                     <p class="browser-item-image">
                         <a href="catalog-item.html">
-                            <img src="img/img-mishka.jpg" width="360" height="576" alt="Сайт игрушек ручной работы">
+                            <img src="img/img-mishka.jpg " width="360" height="576" alt="Сайт игрушек ручной работы">
                         </a>
                     </p>
                 </li>
@@ -97,13 +155,34 @@
     </main>
     <footer class="main-footer">
         <section class="map">
-            <!-- Здесь будет скрипт карты -->
+            <h2 class="visually-hidden">Как до нас добраться</h2>
+            <p>
+                <img src="img/map.jpg" width="1440" height="416 " alt="191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 тел. +7 (812) 275-75-75">
+            </p>
             <div>
                 <h4>nёrds design studio</h4>
                 <p>191186, Санкт-Петербург,<br> ул. Б. Конюшенная, д. 19/8</p>
-                <p>тел. +7 (812) 275-75-75</p>
-                <a class="button modal">Напишите нам
-                </a>
+                <p>тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p>
+                <button class="button modal" type="button">Напишите нам</button>
+                <section class="modal write-us">
+                    <span class="h1">Напишите нам</span>
+                    <form class="write-us-form" action="https://echo.nerds.ru" method="post">
+                        <p class="write-us-item">
+                            <label for="write-us-name">Ваше имя:</label>
+                            <input id="write-us-name " type="text" name="name" value=" " placeholder="Представьтесь, пожалуйста">
+                        </p>
+                        <p class="write-us-item ">
+                            <label for="write-us-e-mail">Ваш e-mail:</label>
+                            <input id="write-us-e-mail" type="text" name="e-mail" value=" " placeholder="Для отправки отчетов">
+                        </p>
+                        <p class="write-us-item">
+                            <label for="write-us-comment">Текст письма:</label>
+                            <input id="write-us-comment" type="text" name="comment" value=" " placeholder="В свободной форме">
+                        </p>
+                        <button class="button" type="submit">Отправить</button>
+                    </form>
+                    <button class="modal-close" type="button">Закрыть</button>
+                </section>
             </div>
         </section>
         <div class="footer-social">

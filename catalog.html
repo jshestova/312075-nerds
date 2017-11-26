@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Нердс</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -27,36 +28,29 @@
         <section class="filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
             <form class="filter" method="get" action="https://echo.nerds.ru">
-                <fieldset>
+                <fieldset class="range-fieldset">
                     <legend>Стоимость:</legend>
-                    <ul>
-                        <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-range" type="range" step="1" min="0" max="25000" step="1000" id="filter-range" name="range">
-                            <label class="visually-hidden" for="filter-range">Диапазон</label>
-                        </li>
-                        <li class="filter-option">
-                            <label for="filter-from">От</label>
-                            <input class="visually-hidden filter-input filter-input-number" type="number" name="from" value=" " id="filter-from" checked>
-                        </li>
-                        <li class="filter-option">
-                            <label for="filter-to">До</label>
-                            <input class="visually-hidden filter-input filter-input-number" type="number" name="to" value=" " id="filter-to">
-                        </li>
-                    </ul>
+                    <div class="range-bg"><input class="filter-input filter-input-range" type="range" step="1" min="0" max="25000" step="1000" id="filter-range" name="range">
+                        <label class="visually-hidden" for="filter-range">Диапазон</label></div>
+                    <label for="filter-from">От</label>
+                    <input class="filter-input filter-input-number" type="number" name="from" value=" " id="filter-from" checked>
+                    <label for="filter-to">До</label>
+                    <input class="filter-input filter-input-number" type="number" name="to" value=" " id="filter-to">
+
                 </fieldset>
                 <fieldset>
                     <legend>Сетка:</legend>
                     <ul>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid" value="adaptive" id="filter-adaptive">
+                            <input class="filter-input filter-input-radio" type="radio" name="grid" value="adaptive" id="filter-adaptive">
                             <label for="filter-adaptive">Адаптивная</label>
                         </li>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid" value="fix" id="filter-fix">
+                            <input class="filter-input filter-input-radio" type="radio" name="grid" value="fix" id="filter-fix">
                             <label for="filter-fix">Фиксированная</label>
                         </li>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid" value="flex" id="filter-flex">
+                            <input class="filter-input filter-input-radio" type="radio" name="grid" value="flex" id="filter-flex">
                             <label for="filter-flex">Резиновая</label>
                         </li>
                     </ul>
@@ -65,16 +59,16 @@
                     <legend>Особенности:</legend>
                     <ul>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="slider" id="slider" checked><label for="slider">Слайдер</label>
+                            <input class="filter-input filter-input-checkbox" type="checkbox" name="slider" id="slider" checked><label for="slider">Слайдер</label>
                         </li>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="benefits" id="benefits"><label for="benefits">Блок преимуществ</label>
+                            <input class="filter-input filter-input-checkbox" type="checkbox" name="benefits" id="benefits"><label for="benefits">Блок преимуществ</label>
                         </li>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="news" id="news" checked><label for="news">Новости</label>
+                            <input class="filter-input filter-input-checkbox" type="checkbox" name="news" id="news" checked><label for="news">Новости</label>
                         </li>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="gallery" id="gallery">
+                            <input class="filter-input filter-input-checkbox" type="checkbox" name="gallery" id="gallery">
                             <label for="gallery">Галерея</label>
                         </li>
                         <li class="filter-option">
@@ -83,12 +77,13 @@
                         </li>
                     </ul>
                 </fieldset>
-                <button type="submit" class="filter-button button">Показать</button>
+                <button type="submit" class="button btn-gray">Показать</button>
             </form>
         </section>
         <section>
-            <ul class="view">
-                <li class="view-current">По цене</li>
+            <legend>Сортировать:</legend>
+            <ul class="sort">
+                <li class="sort-current">По цене</li>
                 <li><a href="#">По типу</a></li>
                 <li><a href="#">По названию</a></li>
             </ul>
@@ -102,53 +97,53 @@
                             <img src="img/img-sedona.jpg" width="360" height="575" alt="Информационный сайт для туристов Sedona">
                         </a>
                     </p>
-                    <div>
-                        <h3 class="catalog-item-title">Sedona</h3>
-                        <span class="catalog-item-description">Информационный сайт для туристов</span>
-                        <a class="button" href="#">9 900 руб.</a>
+                    <div class="catalog-item-title">
+                        <h4>Sedona</h4>
+                        <span class="clr-gray">Информационный сайт для туристов</span>
+                        <a class="button btn-pink" href="# ">9 900 руб.</a>
                     </div>
                 </li>
                 <li class="catalog-item">
                     <p class="browser-item-image">
-                        <a href="catalog-item.html">
-                            <img src="img/img-pink.jpg" width="360" height="576" alt="Приложение Pink">
+                        <a href="catalog-item.html ">
+                            <img src="img/img-pink.jpg " width="360 " height="576 " alt="Приложение Pink ">
                         </a>
                     </p>
                 </li>
-                <li class="catalog-item">
-                    <p class="browser-item-image">
-                        <a href="catalog-item.html">
-                            <img src="img/img-barbershop.jpg" width="360" height="576" alt="Сайт барбершопа Бородинский">
+                <li class="catalog-item ">
+                    <p class="browser-item-image ">
+                        <a href="catalog-item.html ">
+                            <img src="img/img-barbershop.jpg " width="360 " height="576 " alt="Сайт барбершопа Бородинский ">
                         </a>
                     </p>
                 </li>
-                <li class="catalog-item">
-                    <p class="browser-item-image">
-                        <a href="catalog-item.html">
-                            <img src="img/img-mishka.jpg " width="360" height="576" alt="Сайт игрушек ручной работы">
+                <li class="catalog-item ">
+                    <p class="browser-item-image ">
+                        <a href="catalog-item.html ">
+                            <img src="img/img-mishka.jpg " width="360 " height="576 " alt="Сайт игрушек ручной работы ">
                         </a>
                     </p>
                 </li>
-                <li class="catalog-item">
-                    <p class="browser-item-image">
-                        <a href="catalog-item.html">
-                            <img src="img/img-aplus.jpg" width="360" height="576" alt="Сайт школы обучения">
+                <li class="catalog-item ">
+                    <p class="browser-item-image ">
+                        <a href="catalog-item.html ">
+                            <img src="img/img-aplus.jpg " width="360 " height="576 " alt="Сайт школы обучения ">
                         </a>
                     </p>
                 </li>
-                <li class="catalog-item">
-                    <p class="browser-item-image">
-                        <a href="catalog-item.html">
-                            <img src="img/img-kvast.jpg" width="360" height="576" alt="Сайт крафтового кваса">
+                <li class="catalog-item ">
+                    <p class="browser-item-image ">
+                        <a href="catalog-item.html ">
+                            <img src="img/img-kvast.jpg " width="360 " height="576 " alt="Сайт крафтового кваса ">
                         </a>
                     </p>
                 </li>
             </ul>
             <ul class="pagination-list">
                 <li class="pagination-item-current"><a>1</a></li>
-                <li class="pagination-item"><a href="#">2</a></li>
-                <li class="pagination-item"><a href="#">3</a></li>
-                <li class="pagination-item"><a href="#">Следующая</a></li>
+                <li class="pagination-item"><a href="# ">2</a></li>
+                <li class="pagination-item"><a href="# ">3</a></li>
+                <li class="pagination-item"><a href="# ">Следующая</a></li>
             </ul>
         </section>
 
@@ -157,27 +152,27 @@
         <section class="map">
             <h2 class="visually-hidden">Как до нас добраться</h2>
             <p>
-                <img src="img/map.jpg" width="1440" height="416 " alt="191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 тел. +7 (812) 275-75-75">
+                <img src="img/map.jpg" width="1440" height="416" alt="191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 тел. +7 (812) 275-75-75">
             </p>
             <div>
                 <h4>nёrds design studio</h4>
-                <p>191186, Санкт-Петербург,<br> ул. Б. Конюшенная, д. 19/8</p>
-                <p>тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p>
+                <p class="clr-gray">191186, Санкт-Петербург,<br> ул. Б. Конюшенная, д. 19/8</p>
+                <p class="clr-gray">тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p>
                 <a class="button" href="#">Напишите нам</a>
                 <section class="modal write-us">
-                    <span class="modal title">Напишите нам</span>
+                    <span class="title">Напишите нам</span>
                     <form class="write-us-form" action="https://echo.nerds.ru" method="post">
                         <p class="write-us-item">
                             <label for="write-us-name">Ваше имя:</label>
-                            <input id="write-us-name " type="text" name="name" value=" " placeholder="Представьтесь, пожалуйста">
+                            <input id="write-us-name" type="text" name="name" value="" placeholder="Представьтесь, пожалуйста">
                         </p>
-                        <p class="write-us-item ">
+                        <p class="write-us-item">
                             <label for="write-us-e-mail">Ваш e-mail:</label>
-                            <input id="write-us-e-mail" type="text" name="e-mail" value=" " placeholder="Для отправки отчетов">
+                            <input id="write-us-e-mail" type="text" name="e-mail" value="" placeholder="Для отправки отчетов">
                         </p>
                         <p class="write-us-item">
                             <label for="write-us-comment">Текст письма:</label>
-                            <input id="write-us-comment" type="text" name="comment" value=" " placeholder="В свободной форме">
+                            <input id="write-us-comment" type="text" name="comment" value="" placeholder="В свободной форме">
                         </p>
                         <button class="button" type="submit">Отправить</button>
                     </form>

@@ -57,6 +57,10 @@ h4 {
     color: #000000;
 }
 
+.about h4 {
+    text-align: center;
+}
+
 fieldset {
     border: none;
 }
@@ -176,12 +180,15 @@ legend {
     list-style: none;
 }
 
-.site-navigation a {
+.site-navigation a,
+a.checkout {
     color: #000;
+    font-weight: 700;
 }
 
 .site-navigation a:hover,
-.checkout a:hover {
+.checkout a:hover,
+a.checkout:hover {
     color: #fb565a;
 }
 
@@ -196,6 +203,7 @@ legend {
 
 .service-item {
     text-align: left;
+    width: 300px;
 }
 
 .about-factoid {
@@ -210,9 +218,10 @@ legend {
     vertical-align: super;
 }
 
-
+.clr-gray,
 .clr-gray a {
     color: #666;
+    font-weight: 700;
 }
 
 .about-item p {
@@ -221,12 +230,15 @@ legend {
 
 .description-item {
     list-style-image: url(../img/red-dash-2.png);
+    font-weight: 700;
+    line-height: 3;
 }
 
 .logo {
     border-top: 1px #9EC1D4;
     border-bottom: 1px #9EC1D4;
     padding-left: 10px;
+    width: 209px;
 }
 
 .title {
@@ -240,11 +252,13 @@ legend {
     list-style: none;
 }
 
-.write-us-item input {
+.write-us-item input,
+.write-us-item textarea {
     color: #d7dcde;
-    padding: 10px 150px 10px 7px;
+    padding: 10px;
     border: 1px solid #d7dcde;
     text-align: left;
+    width: 340px;
 }
 
 .write-us-item input:hover {
@@ -421,4 +435,338 @@ input[type=range]::-ms-thumb {
     border-radius: 3px;
     padding: 9px 15px;
     line-height: 65px;
+}
+
+/* ----- Сеточные стили ----- */
+
+/* ---- Слайдер ------- */
+
+.slider {
+    position: relative;
+
+    background-color: #eeeeee;
+}
+
+.slider-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 104px;
+    z-index: 100;
+
+    width: 160px;
+    height: 18px;
+
+    text-align: center;
+    font-size: 0;
+    transform: translateX(-50%);
+}
+
+.slider-controls label {
+    position: relative;
+
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-controls label::after {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+
+    width: 18px;
+    height: 18px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+}
+
+.slider-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.slider-item {
+    display: none;
+    padding: 78px 0 80px 0;
+}
+
+.slider-item:nth-child(1) {
+    background-image: url("../img/slide1.png");
+    background-repeat: no-repeat;
+    background-position: 93% 18px;
+}
+
+.slider-item:nth-child(2) {
+    background-image: url("../img/slide2.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+}
+
+.slider-item:nth-child(3) {
+    background-image: url("../img/slide3.png");
+    background-repeat: no-repeat;
+    background-position: 100% 20px;
+}
+
+#product-1:checked ~ .slider-list .slider-item:nth-child(1) {
+    display: block;
+}
+
+#product-2:checked ~ .slider-list .slider-item:nth-child(2) {
+    display: block;
+}
+
+#product-3:checked ~ .slider-list .slider-item:nth-child(3) {
+    display: block;
+}
+
+#product-1:checked ~ .slider-controls .slider-controls-item--1::before,
+#product-2:checked ~ .slider-controls .slider-controls-item--2::before,
+#product-3:checked ~ .slider-controls .slider-controls-item--3::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: 4px;
+    height: 4px;
+    margin: -4px;
+    background-color: inherit;
+    border: 2px solid #c1c1c1;
+    border-radius: 50%;
+}
+
+.slider-item h3 {
+    max-width: 600px;
+    margin: 0;
+    margin-bottom: 27px;
+    text-transform: none;
+    font-size: 55px;
+    line-height: 55px;
+    font-weight: 700;
+}
+
+.slider-item p {
+    max-width: 430px;
+    margin: 0;
+    margin-bottom: 38px;
+}
+
+/* ---- Слайдер  end------- */
+
+.main-navigation,
+.container,
+.services,
+.description,
+.gallery-logos,
+.map-wrapper,
+.footer-social-wrapper {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.container-wrapper-gray {
+    background-color: #eee;
+}
+
+.main-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    /* Временно для сетки */
+    min-height: 115px;
+}
+
+.main-header-logo {
+    width: 160px;
+    height: 65px;
+}
+
+.site-navigation {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+}
+
+.site-navigation li {
+    padding: 0 24px;
+}
+
+.checkout-navigation {
+    margin: 15px 0;
+}
+
+.checkout-navigation {
+    width: 150px;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-top: 80px;
+    border-bottom: 1px #eee solid;
+    padding-bottom: 80px;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 42px;
+}
+
+.description-left {
+    width: 660px;
+}
+
+.about {
+    width: 360px;
+}
+
+.about-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-top: 50px;
+}
+
+.gallery-logos-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 45px 0;
+    border-bottom: 1px #eee solid;
+    border-top: 1px #eee solid;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.footer-social {
+    display: flex;
+    align-items: flex-end;
+    margin: 70px 0;
+}
+
+.footer-social ul {
+    display: flex;
+    width: 260px;
+    list-style: none;
+    margin-right: 140px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    margin-right: 12px;
+}
+
+.social-text p {
+    width: 6000px;
+    min-height: 80px;
+}
+
+.map {
+    height: 416px;
+    background-image: url(../img/map.jpg);
+    background-size: cover;
+}
+
+.map-flex {
+    display: flex;
+    justify-content: flex-start;
+    height: 416px;
+}
+
+.contacts {
+    width: 220px;
+    height: 255px;
+    background-color: white;
+    padding: 35px 50px;
+    align-self: center;
+}
+
+.contacts a.button {
+    padding: 13px 40px;
+    margin-top: 20px;
+}
+
+.footer-social-wrapper {
+    display: flex;
+    align-items: flex-end;
+}
+
+.write-us-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 760px;
+    padding: 80px 100px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+    /*TODO: убрать при настройке модального окна*/
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.form-1st-row {
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+}
+
+.form-2nd-row {
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+}
+
+.write-us-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.write-us-item label {
+    padding-bottom: 8px;
+}
+
+.write-us-item textarea {
+    width: 740px;
+    height: 120px;
+}
+
+.modal-button {
+    width: 260px;
+    margin-top: 34px;
+}
+
+.modal-close {
+    border: 0;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    opacity: 1;
 }

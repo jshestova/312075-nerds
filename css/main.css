@@ -193,9 +193,9 @@ a.checkout:hover {
     color: #fb565a;
 }
 
-.site-navigation a:focus,
-.checkout a:focus {
-    color: rgba (0, 0, 0, 0.3);
+.site-navigation a:active,
+a.checkout:active {
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .services-list {
@@ -257,24 +257,74 @@ a.checkout:hover {
 .write-us-item textarea {
     color: #d7dcde;
     padding: 10px;
-    border: 1px solid #d7dcde;
+    border: 2px solid #d7dcde;
     text-align: left;
     width: 340px;
 }
 
-.write-us-item input:hover {
-    border: 1px solid #b4b9bb;
+button,
+input,
+textarea {
+    /*хак с !important чтобы убрать мерзую синию обводку браузера*/
+    outline: 0px !important;
+    -webkit-appearance: none;
 }
 
-.write-us-item input:focus {
-    border: 1px solid #000;
+.write-us-item input:hover,
+.write-us-item textarea:hover {
+    border: 2px solid #b4b9bb;
+}
+
+.write-us-item input:hover::-webkit-input-placeholder,
+.write-us-item textarea:hover::-webkit-input-placeholder {
+    color: #b4b9bb;
+}
+
+.write-us-item input:hover:-moz-placeholder,
+.write-us-item textarea:hover:-moz-placeholder {
+    color: #b4b9bb;
+}
+
+.write-us-item input:focus,
+.write-us-item textarea:focus {
+    border: 2px solid #000;
     color: #000;
     outline: none;
 }
 
-.write-us-item input:invalid {
-    border: 1px solid red;
+.write-us-item input:focus::-webkit-input-placeholder,
+.write-us-item textarea:focus::-webkit-input-placeholder {
+    color: #000;
+}
+
+.write-us-item input:focus:-moz-placeholder,
+.write-us-item textarea:focus:-moz-placeholder {
+    color: #000;
+}
+
+.write-us-item input:invalid,
+.write-us-item textarea:invalid {
+    border: 2px solid red;
     color: red;
+    outline: none;
+}
+
+.write-us-item input:invalid::-webkit-input-placeholder,
+.write-us-item textarea:invalid::-webkit-input-placeholder {
+    color: red;
+}
+
+.write-us-item input:invalid:-moz-placeholder,
+.write-us-item textarea:invalid:-moz-placeholder {
+    color: red;
+}
+
+.logo img:hover {
+    opacity: 0.3;
+}
+
+.logo img:active {
+    opacity: 0.1;
 }
 
 .filter-input-number,
@@ -381,27 +431,27 @@ input[type=range]::-ms-thumb {
     margin-bottom: 35px;
 }
 
-.catalog-item-1 {
+.catalog-item-sedona {
     background-image: url(../img/img-sedona.jpg);
 }
 
-.catalog-item-2 {
+.catalog-item-pink {
     background-image: url(../img/img-pink.jpg);
 }
 
-.catalog-item-3 {
+.catalog-item-barbershop {
     background-image: url(../img/img-barbershop.jpg);
 }
 
-.catalog-item-4 {
+.catalog-item-mishka {
     background-image: url(../img/img-mishka.jpg);
 }
 
-.catalog-item-5 {
+.catalog-item-aplus {
     background-image: url(../img/img-aplus.jpg);
 }
 
-.catalog-item-6 {
+.catalog-item-kvast {
     background-image: url(../img/img-kvast.jpg);
 }
 
@@ -453,7 +503,7 @@ input[type=range]::-ms-thumb {
     color: #8b8b8b;
 }
 
-.sort a:focus {
+.sort a:active {
     color: #000;
 }
 
@@ -650,6 +700,14 @@ input[type=range]::-ms-thumb {
     height: 65px;
 }
 
+.main-header-logo svg:hover {
+    fill: #303030;
+}
+
+.main-header-logo svg:active {
+    fill: #a6a6a6;
+}
+
 .site-navigation {
     width: auto;
     display: flex;
@@ -662,11 +720,12 @@ input[type=range]::-ms-thumb {
 }
 
 .checkout-navigation {
+    width: 110px;
     margin: 15px 0;
-}
-
-.checkout-navigation {
-    width: 150px;
+    background-image: url(../img/cart-icon.svg);
+    background-repeat: no-repeat;
+    background-position-y: 3px;
+    text-align: right;
 }
 
 .services-list {
@@ -737,6 +796,30 @@ input[type=range]::-ms-thumb {
     margin-right: 12px;
 }
 
+.social-button:hover {
+    background-color: #e74246;
+}
+
+.social-button:active {
+    background-color: #d7373b;
+    color: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0px 2px 0px 0px #c13135;
+    -moz-box-shadow: inset 0px 2px 0px 0px #c13135;
+    box-shadow: inset 0px 2px 0px 0px #c13135;
+}
+
+.social-button svg:active #vkontakte {
+    fill: #e37376;
+}
+
+.social-button svg:active #facebook {
+    fill: #e37376;
+}
+
+.social-button svg:active #instagram {
+    fill: #e37376;
+}
+
 .social-text p {
     width: 6000px;
     min-height: 80px;
@@ -783,6 +866,7 @@ input[type=range]::-ms-thumb {
     /*TODO: убрать при настройке модального окна*/
     margin-top: 200px;
     margin-bottom: 200px;
+    background: white;
 }
 
 .form-1st-row {
@@ -821,10 +905,17 @@ input[type=range]::-ms-thumb {
     border: 0;
     opacity: 0.3;
     cursor: pointer;
+    outline: 0px !important;
+    /*!important чтобы убрать мерзую синию обводку браузера*/
+    -webkit-appearance: none;
 }
 
 .modal-close:hover {
     opacity: 1;
+}
+
+.modal-close:active {
+    opacity: 0.1;
 }
 
 
@@ -874,6 +965,20 @@ li.arrow {
 
 li.arrow-last {
     padding-right: 0;
+}
+
+li.arrow-active svg path {
+    fill: #000;
+}
+
+li svg:hover #arrow-down,
+li svg:hover #arrow-up {
+    fill: #a6a6a6;
+}
+
+li svg:active #arrow-down,
+li svg:active #arrow-up {
+    fill: #000;
 }
 
 .catalog-list {
@@ -1037,10 +1142,18 @@ li.arrow-last {
 
 .filter-input-radio + label::before {
     position: relative;
-    top: 6px;
     content: url(../img/radio-off.svg);
+    top: 6px;
     left: -8px;
     padding-left: 8px;
+}
+
+.filter-input-radio + label:hover::before {
+    content: url(../img/radio-off-black.svg);
+}
+
+.filter-input-radio:disabled + label::before {
+    content: url(../img/radio-off-disabled.svg);
 }
 
 .filter-input-radio:checked + label::before {
@@ -1051,6 +1164,19 @@ li.arrow-last {
     padding-left: 8px;
 }
 
+.filter-input-radio:checked:hover + label::before {
+    content: url(../img/radio-on-black.svg);
+}
+
+.filter-input-radio:checked:disabled + label::before {
+    content: url(../img/radio-on-disabled.svg);
+}
+
+.filter-option label:hover {
+    color: black;
+}
+
+
 .filter-input-checkbox {
     height: 25px;
     width: 25px;
@@ -1060,19 +1186,88 @@ li.arrow-last {
 .filter-input-checkbox + label::before {
     position: relative;
     top: 6px;
-    content: url(../img/checkbox-off.svg);
+    content: url(../img/checkbox-off-gray.svg);
     left: -8px;
     padding-left: 8px;
+}
+
+.filter-input-checkbox + label:hover::before {
+    content: url(../img/checkbox-off.svg);
+}
+
+.filter-input-checkbox:disabled + label::before {
+    content: url(../img/checkbox-off-disabled.svg);
 }
 
 .filter-input-checkbox:checked + label::before {
     position: relative;
     top: 6px;
-    content: url(../img/checkbox-on.svg);
+    content: url(../img/checkbox-on-gray.svg);
     left: -8px;
     padding-left: 8px;
 }
 
+.filter-input-checkbox:checked + label:hover::before {
+    content: url(../img/checkbox-on.svg);
+}
+
+.filter-input-checkbox:checked:disabled + label::before {
+    content: url(../img/checkbox-on-disabled.svg);
+}
+
+
+
 .pagination-list {
     margin-bottom: 60px;
+}
+
+/*************Modal*************/
+
+@keyframes bounce {
+    0% {
+        transform: scale (0);
+    }
+
+    50% {
+        transform: scale (50);
+    }
+
+    75% {
+        transform: scale (75);
+    }
+
+    100% {
+        transform: scale (100);
+    }
+}
+
+.write-us {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.modal-show {
+    display: block;
+    animation: bounce 0.6s;
+}
+
+.modal-error {
+    animation: shake 0.6s;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.modal-error {
+    animation: shake 0.6s;
 }

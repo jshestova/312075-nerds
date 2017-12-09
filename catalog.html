@@ -154,7 +154,7 @@
                             <div class="catalog-item-title" id="mishka-inner">
                                 <h4>Mishka</h4>
                                 <span class="color-gray">Мишка, плюшевый мишка</span>
-                                <a class="button btn-pink" href="#">119 900 руб.</a>
+                                <a class="button btn-pink" href="#">19 900 руб.</a>
                             </div>
                         </div>
                     </li>
@@ -197,7 +197,7 @@
                         <h4>nёrds design studio</h4>
                         <p class="color-gray">191186, Санкт-Петербург,<br> ул. Б. Конюшенная, д. 19/8</p>
                         <p class="color-gray">тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p>
-                        <a class="button" href="#">Напишите нам</a>
+                        <a class="button modal-link" href="#">Напишите нам</a>
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@
         </div>
     </footer>
     <section class="modal write-us">
-        <form class="write-us-form" action="https://echo.nerds.ru" method="post">
+        <form class="write-us-form" onsubmit="return false" action="https://echo.nerds.ru" method="post">
             <div class="form-1st-row">
                 <span class="title">Напишите нам</span>
                 <button class="modal-close" type="button">
@@ -298,7 +298,116 @@
                 sedonaHeader.style.fill = "#4d4d4d";
 
             };
+
+            pink.onmouseover = function(e) {
+                document.getElementById('pink-inner').style.display = 'flex';
+                pinkHeader.style.fill = "#e9e9e9";
+            }
+
+            pink.onmouseout = function(e) {
+                document.getElementById('pink-inner').style.display = 'none';
+                pinkHeader.style.fill = "#4d4d4d";
+
+            };
+
+            barbershop.onmouseover = function(e) {
+                document.getElementById('barbershop-inner').style.display = 'flex';
+                barbershopHeader.style.fill = "#e9e9e9";
+            }
+
+            barbershop.onmouseout = function(e) {
+                document.getElementById('barbershop-inner').style.display = 'none';
+                barbershopHeader.style.fill = "#4d4d4d";
+
+            };
+
+            mishka.onmouseover = function(e) {
+                document.getElementById('mishka-inner').style.display = 'flex';
+                mishkaHeader.style.fill = "#e9e9e9";
+            }
+
+            mishka.onmouseout = function(e) {
+                document.getElementById('mishka-inner').style.display = 'none';
+                mishkaHeader.style.fill = "#4d4d4d";
+
+            };
+
+            aplus.onmouseover = function(e) {
+                document.getElementById('aplus-inner').style.display = 'flex';
+                aplusHeader.style.fill = "#e9e9e9";
+            }
+
+            aplus.onmouseout = function(e) {
+                document.getElementById('aplus-inner').style.display = 'none';
+                aplusHeader.style.fill = "#4d4d4d";
+
+            };
+
+            kvast.onmouseover = function(e) {
+                document.getElementById('kvast-inner').style.display = 'flex';
+                kvastHeader.style.fill = "#e9e9e9";
+            }
+
+            kvast.onmouseout = function(e) {
+                document.getElementById('kvast-inner').style.display = 'none';
+                kvastHeader.style.fill = "#4d4d4d";
+
+            };
         }
+
+    </script>
+    <script>
+        var link = document.querySelector(".modal-link");
+
+        var popup = document.querySelector(".write-us");
+        var close = popup.querySelector(".modal-close");
+
+        var form = popup.querySelector("form");
+        var name = popup.querySelector("[name=name]");
+        var email = popup.querySelector("[name=e-mail]");
+        var text = popup.querySelector("[name=comment]");
+        //var storage = localStorage.getItem("name");
+
+        link.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            popup.classList.add("modal-show");
+
+        });
+
+        close.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            popup.classList.remove("modal-show");
+            popup.classList.remove("modal-error");
+        });
+
+        form.addEventListener("submit", function(evt) {
+            var name = popup.querySelector("[name=name]");
+            var email = popup.querySelector("[name=e-mail]");
+            var text = popup.querySelector("[name=comment]");
+            if (!name.value) {
+                name.classList.add("invalid");
+                return false;
+            } else if (!email.value) {
+                name.classList.remove("invalid");
+                email.classList.add("invalid");
+                return false;
+            } else {
+                email.classList.remove("invalid");
+            }
+
+            localStorage.setItem("name", name.value);
+            localStorage.setItem("email", email.value);
+            localStorage.setItem("text", text.value);
+            popup.classList.remove("modal-show");
+        });
+
+        window.addEventListener("keydown", function(evt) {
+            if (evt.keyCode === 27) {
+                if (popup.classList.contains("modal-show")) {
+                    popup.classList.remove("modal-show");
+                }
+            }
+        });
 
     </script>
 </body>

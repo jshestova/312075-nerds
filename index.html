@@ -190,7 +190,7 @@
         </div>
     </footer>
     <section class="modal write-us">
-        <form class="write-us-form" action="https://echo.nerds.ru" method="post">
+        <form class="write-us-form" onsubmit="return false" action="https://echo.nerds.ru" method="post">
             <div class="form-1st-row">
                 <span class="title">Напишите нам</span>
                 <button class="modal-close" type="button">
@@ -201,11 +201,11 @@
             <div class="form-2nd-row">
                 <p class="write-us-item">
                     <label for="write-us-name">Ваше имя:</label>
-                    <input required id="write-us-name" type="text" name="name" value="" placeholder="Представьтесь, пожалуйста">
+                    <input id="write-us-name" type="text" name="name" value="" placeholder="Представьтесь, пожалуйста">
                 </p>
                 <p class="write-us-item">
                     <label for="write-us-e-mail">Ваш e-mail:</label>
-                    <input required id="write-us-e-mail" type="email" name="e-mail" value="" placeholder="Для отправки отчетов">
+                    <input id="write-us-e-mail" type="email" name="e-mail" value="" placeholder="Для отправки отчетов">
                 </p>
             </div>
             <p class="write-us-item">
@@ -243,28 +243,26 @@
             popup.classList.remove("modal-error");
         });
 
-        /* form.addEventListener("submit", function(evt) {
-             var name = popup.querySelector("[name=name]");
-             var email = popup.querySelector("[name=e-mail]");
-             var text = popup.querySelector("[name=comment]");
-             if (!name.value) {
-                 evt.preventDefault();
-                 //popup.classList.remove("modal-error");
-                 //popup.offsetWidth = popup.offsetWidth;
-                 //popup.classList.add("modal-error");
-                 //name.classList.add("invalid");
-                 name.setCustomValidity("Invalid field.");
-             } else if (!email.value) {
-                 evt.preventDefault();
-                 name.setCustomValidity("");
-                 email.setCustomValidity("Invalid field.");
-             } else {
-                 email.setCustomValidity("");
-                 localStorage.setItem("name", name.value);
-                 localStorage.setItem("email", email.value);
-                 localStorage.setItem("text", text.value);
-             }
-         });*/
+        form.addEventListener("submit", function(evt) {
+            var name = popup.querySelector("[name=name]");
+            var email = popup.querySelector("[name=e-mail]");
+            var text = popup.querySelector("[name=comment]");
+            if (!name.value) {
+                name.classList.add("invalid");
+                return false;
+            } else if (!email.value) {
+                name.classList.remove("invalid");
+                email.classList.add("invalid");
+                return false;
+            } else {
+                email.classList.remove("invalid");
+            }
+
+            localStorage.setItem("name", name.value);
+            localStorage.setItem("email", email.value);
+            localStorage.setItem("text", text.value);
+            popup.classList.remove("modal-show");
+        });
 
         window.addEventListener("keydown", function(evt) {
             if (evt.keyCode === 27) {

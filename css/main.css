@@ -302,7 +302,23 @@ textarea {
     color: #000;
 }
 
-.write-us-item input:invalid,
+input.invalid {
+    border: 2px solid red;
+    color: red;
+    outline: none;
+}
+
+.invalid:invalid::-webkit-input-placeholder,
+.textarea:invalid::-webkit-input-placeholder {
+    color: red;
+}
+
+.invalid:invalid:-moz-placeholder,
+.invalid:invalid:-moz-placeholder {
+    color: red;
+}
+
+/*.write-us-item input:invalid,
 .write-us-item textarea:invalid {
     border: 2px solid red;
     color: red;
@@ -317,7 +333,7 @@ textarea {
 .write-us-item input:invalid:-moz-placeholder,
 .write-us-item textarea:invalid:-moz-placeholder {
     color: red;
-}
+}*/
 
 .logo img:hover {
     opacity: 0.3;

@@ -335,8 +335,12 @@ input.invalid {
     color: red;
 }*/
 
-.logo img:hover {
+.logo img {
     opacity: 0.3;
+}
+
+.logo img:hover {
+    opacity: 1;
 }
 
 .logo img:active {
@@ -485,7 +489,8 @@ input[type=range]::-ms-thumb {
     bottom: -347px;
 }
 
-.catalog-item-title span {
+
+.catalog-list .catalog-item-title span {
     width: 200px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -506,8 +511,6 @@ input[type=range]::-ms-thumb {
 .filter ul {
     line-height: 40px;
 }
-
-
 
 .sort a {
     text-transform: uppercase;
@@ -843,14 +846,18 @@ input[type=range]::-ms-thumb {
 
 .map {
     height: 416px;
-    background-image: url(../img/map.jpg);
-    background-size: cover;
+    position: relative;
+    /*background-image: url(../img/map.jpg);
+    background-size: cover;*/
 }
 
 .map-flex {
     display: flex;
     justify-content: flex-start;
     height: 416px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
 }
 
 .contacts {
@@ -915,6 +922,7 @@ input[type=range]::-ms-thumb {
 .modal-button {
     width: 260px;
     margin-top: 34px;
+    border: 0;
 }
 
 .modal-close {
@@ -924,6 +932,7 @@ input[type=range]::-ms-thumb {
     outline: 0px !important;
     /*!important чтобы убрать мерзую синию обводку браузера*/
     -webkit-appearance: none;
+    background: none;
 }
 
 .modal-close:hover {

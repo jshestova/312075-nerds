@@ -6,7 +6,6 @@
     <title>Cтудия Нердс</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link href="css/outline.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -21,7 +20,7 @@
             <ul class="site-navigation">
                 <li><a href="about.html">Студия</a></li>
                 <li><a href="clients.html">Клиенты</a></li>
-                <li><a href="catalog.html" href="catalog.html">Магазин</a></li>
+                <li><a href="catalog.html">Магазин</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
             </ul>
             <a href="checkout.html" class="checkout checkout-navigation">Корзина</a>
@@ -121,6 +120,7 @@
             </div>
         </section>
         <section class="gallery-logos">
+            <h4 class="visually-hidden">Логотипы партнеров</h4>
             <div class="gallery-logos-wrapper">
                 <div class="logo">
                     <a href="https://htmlacademy.ru">
@@ -141,7 +141,8 @@
     </div>
     <footer class="main-footer">
         <section class="map">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada3356351a76b2561dfa51f807f6aea6f541556ff3edaf97e01038e775f930b4&amp;width=100%25&amp;height=416&amp;lang=ru_RU&amp;scroll=false"></script>
+            <div id="mymap"></div>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada3356351a76b2561dfa51f807f6aea6f541556ff3edaf97e01038e775f930b4&amp;width=100%25&amp;height=416&amp;lang=ru_RU&amp;scroll=false;id=mymap"></script>
             <div class="map-wrapper">
                 <h2 class="visually-hidden">Как до нас добраться</h2>
                 <div class="map-flex">
@@ -191,6 +192,7 @@
         </div>
     </footer>
     <section class="modal write-us">
+        <h4 class="visually-hidden">Модальное окно с формой обратной связи</h4>
         <form class="write-us-form" onsubmit="return false" action="https://echo.nerds.ru" method="post">
             <div class="form-1st-row">
                 <span class="title">Напишите нам</span>
@@ -216,21 +218,14 @@
             <button class="button modal-button" type="submit">Отправить</button>
         </form>
     </section>
-
-
-
-
     <script>
         var link = document.querySelector(".modal-link");
-
         var popup = document.querySelector(".write-us");
         var close = popup.querySelector(".modal-close");
-
         var form = popup.querySelector("form");
         var name = popup.querySelector("[name=name]");
         var email = popup.querySelector("[name=e-mail]");
         var text = popup.querySelector("[name=comment]");
-        //var storage = localStorage.getItem("name");
 
         link.addEventListener("click", function(evt) {
             evt.preventDefault();
@@ -274,7 +269,6 @@
         });
 
     </script>
-
 </body>
 
 </html>

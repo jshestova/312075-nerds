@@ -37,6 +37,13 @@ h1 {
     color: #000000;
 }
 
+.description h1 {
+    font-size: 45px;
+    line-height: 45px;
+    color: #000000;
+    margin: 30px 0 35px 0;
+}
+
 h2 {
     font-size: 55px;
     line-height: 55px;
@@ -48,17 +55,37 @@ h3 {
     line-height: 30px;
     text-transform: uppercase;
     color: #000000;
+    margin: 16px 0;
 }
 
-h4 {
+.contacts h4 {
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
     color: #000000;
+    font-size: 18px;
+    margin: 25px 0 23px 0;
+}
+
+.contacts p {
+    line-height: 1.2;
+}
+
+.description h4 {
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 40px 0 15px 0;
 }
 
 .about h4 {
     text-align: center;
+    margin: 30px 0 15px 0;
+}
+
+li.about-item {
+    margin-right: 15px;
 }
 
 fieldset {
@@ -89,7 +116,7 @@ legend {
 
 .button {
     background-color: #fb565a;
-    padding: 13px 55px;
+    padding: 13px 40px;
     display: inline-block;
     border-radius: 3px;
     vertical-align: middle;
@@ -205,6 +232,13 @@ a.checkout:active {
 .service-item {
     text-align: left;
     width: 300px;
+    margin-right: 60px;
+}
+
+.service-item p {
+    width: 249px;
+    min-height: 72px;
+    margin: 10px 0;
 }
 
 .about-factoid {
@@ -238,8 +272,8 @@ a.checkout:active {
 .logo {
     border-top: 1px #9EC1D4;
     border-bottom: 1px #9EC1D4;
-    padding-left: 10px;
-    width: 209px;
+    padding-left: 30px;
+    width: 215px;
 }
 
 .title {
@@ -253,6 +287,10 @@ a.checkout:active {
     list-style: none;
 }
 
+.footer-wrapper p {
+    margin: 8px 0 20px 0;
+}
+
 .write-us-item input,
 .write-us-item textarea {
     color: #d7dcde;
@@ -260,14 +298,6 @@ a.checkout:active {
     border: 2px solid #d7dcde;
     text-align: left;
     width: 340px;
-}
-
-button,
-input,
-textarea {
-    /*хак с !important чтобы убрать мерзую синию обводку браузера*/
-    outline: 0px !important;
-    -webkit-appearance: none;
 }
 
 .write-us-item input:hover,
@@ -317,23 +347,6 @@ input.invalid {
 .invalid:invalid:-moz-placeholder {
     color: red;
 }
-
-/*.write-us-item input:invalid,
-.write-us-item textarea:invalid {
-    border: 2px solid red;
-    color: red;
-    outline: none;
-}
-
-.write-us-item input:invalid::-webkit-input-placeholder,
-.write-us-item textarea:invalid::-webkit-input-placeholder {
-    color: red;
-}
-
-.write-us-item input:invalid:-moz-placeholder,
-.write-us-item textarea:invalid:-moz-placeholder {
-    color: red;
-}*/
 
 .logo img {
     opacity: 0.3;
@@ -487,8 +500,10 @@ input[type=range]::-ms-thumb {
     display: none;
     position: relative;
     bottom: -347px;
+    max-height: 220px;
+    min-height: 220px;
+    overflow: hidden;
 }
-
 
 .catalog-list .catalog-item-title span {
     width: 200px;
@@ -496,6 +511,9 @@ input[type=range]::-ms-thumb {
     margin-bottom: 30px;
     line-height: 1.3;
     font-weight: 500;
+    max-height: 50px;
+    min-height: 40px;
+    overflow: hidden;
 }
 
 .catalog-item-title a {
@@ -559,7 +577,7 @@ input[type=range]::-ms-thumb {
     background-color: #fff;
     border: 3px solid #dbdbdb;
     border-radius: 3px;
-    padding: 9px 15px;
+    padding: 11px 18px;
     line-height: 65px;
 }
 
@@ -625,6 +643,10 @@ input[type=range]::-ms-thumb {
 .slider-item {
     display: none;
     padding: 78px 0 80px 0;
+}
+
+.slider-item-button {
+    padding: 13px 55px;
 }
 
 .slider-item:nth-child(1) {
@@ -732,10 +754,11 @@ input[type=range]::-ms-thumb {
     display: flex;
     flex-direction: row;
     padding-left: 0;
+    margin-right: 100px;
 }
 
 .site-navigation li {
-    padding: 0 24px;
+    padding-left: 50px;
 }
 
 .checkout-navigation {
@@ -788,13 +811,13 @@ input[type=range]::-ms-thumb {
     border-bottom: 1px #eee solid;
     border-top: 1px #eee solid;
     align-items: center;
-    margin: 80px 0;
+    margin: 40px 0 80px 0;
 }
 
 .footer-social {
     display: flex;
     align-items: flex-end;
-    margin: 70px 0;
+    margin: 55px 0;
 }
 
 .footer-social ul {
@@ -802,6 +825,7 @@ input[type=range]::-ms-thumb {
     width: 260px;
     list-style: none;
     margin-right: 140px;
+    padding-left: 0;
 }
 
 .social-button {
@@ -847,8 +871,6 @@ input[type=range]::-ms-thumb {
 .map {
     height: 416px;
     position: relative;
-    /*background-image: url(../img/map.jpg);
-    background-size: cover;*/
 }
 
 .map-flex {
@@ -864,12 +886,12 @@ input[type=range]::-ms-thumb {
     width: 220px;
     height: 255px;
     background-color: white;
-    padding: 35px 50px;
+    padding: 27px 50px;
     align-self: center;
 }
 
 .contacts a.button {
-    padding: 13px 40px;
+    padding: 13px 45px;
     margin-top: 20px;
 }
 
@@ -886,9 +908,8 @@ input[type=range]::-ms-thumb {
     width: 760px;
     padding: 80px 100px;
     box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
-    /*TODO: убрать при настройке модального окна*/
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 167px;
+    margin-bottom: 150px;
     background: white;
 }
 
@@ -902,11 +923,13 @@ input[type=range]::-ms-thumb {
     flex-direction: row;
     justify-content: space-between;
     display: flex;
+    margin: 35px 0 30px 0;
 }
 
 .write-us-item {
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 .write-us-item label {
@@ -915,13 +938,13 @@ input[type=range]::-ms-thumb {
 
 .write-us-item textarea {
     width: 740px;
-    min-height: 120px;
+    min-height: 90px;
     resize: vertical;
 }
 
 .modal-button {
     width: 260px;
-    margin-top: 34px;
+    margin-top: 53px;
     border: 0;
 }
 
@@ -929,10 +952,10 @@ input[type=range]::-ms-thumb {
     border: 0;
     opacity: 0.3;
     cursor: pointer;
-    outline: 0px !important;
-    /*!important чтобы убрать мерзую синию обводку браузера*/
+    outline: 0px;
     -webkit-appearance: none;
     background: none;
+    padding: 0;
 }
 
 .modal-close:hover {
@@ -942,7 +965,6 @@ input[type=range]::-ms-thumb {
 .modal-close:active {
     opacity: 0.1;
 }
-
 
 /*************Catalog*************/
 
@@ -971,7 +993,7 @@ h1.page-title {
 .sort-wrapper {
     display: flex;
     justify-content: space-between;
-    margin: 50px auto;
+    margin: 56px auto;
 }
 
 .sort {
@@ -981,7 +1003,7 @@ h1.page-title {
 }
 
 .sort li {
-    padding-right: 30px;
+    padding-right: 25px;
 }
 
 li.arrow {
@@ -1022,25 +1044,21 @@ li svg:active #arrow-up {
 }
 
 .pagination-list li {
-    margin-right: 10px;
+    margin-right: 13px;
 }
 
 .pagination-item-last a {
     text-transform: uppercase;
-    padding: 9px 65px;
+    padding: 9px 77px;
 }
 
 /*************Filter*************/
 
 .filter-item {
-    margin: 0;
     padding: 0;
-
     border: none;
-
-    /* Для демонстрации */
     width: 260px;
-    margin: 50px auto;
+    margin: 58px auto;
 }
 
 .range-filter {
@@ -1049,6 +1067,14 @@ li svg:active #arrow-up {
 }
 
 .filter-item legend {
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sort-wrapper div {
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
@@ -1142,20 +1168,21 @@ li svg:active #arrow-up {
 .filter-features ul {
     padding: 0;
     margin: 0;
+    margin-top: 7px;
 }
 
 .filter-option label {
     color: #283136;
     cursor: pointer;
-    line-height: 45px;
+
 }
 
 .filter-grid {
-    margin: 70px 0 50px 0;
+    margin: 58px 0 40px 0;
 }
 
 .filter-features {
-    margin: 50px 0;
+    margin: 40px 0;
 }
 
 .filter-input-radio {
@@ -1163,7 +1190,6 @@ li svg:active #arrow-up {
     width: 25px;
     display: none;
 }
-
 
 .filter-input-radio + label::before {
     position: relative;
@@ -1200,7 +1226,6 @@ li svg:active #arrow-up {
 .filter-option label:hover {
     color: black;
 }
-
 
 .filter-input-checkbox {
     height: 25px;
@@ -1240,10 +1265,8 @@ li svg:active #arrow-up {
     content: url(../img/checkbox-on-disabled.svg);
 }
 
-
-
 .pagination-list {
-    margin-bottom: 60px;
+    margin: 15px 0 55px 0;
 }
 
 /*************Modal*************/

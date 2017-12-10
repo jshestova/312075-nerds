@@ -25,11 +25,11 @@
             <a href="checkout.html" class="checkout checkout-navigation">Корзина</a>
         </nav>
     </header>
-    <main class="container-wrapper-gray">
+    <div class="container-wrapper-gray">
         <div class="container">
             <h1 class="page-title">Магазин готовых шаблонов</h1>
         </div>
-    </main>
+    </div>
     <main class="container">
         <div class="catalog-wrapper">
             <section class="filters">
@@ -85,7 +85,7 @@
                                 <label for="gallery">Галерея</label>
                             </li>
                             <li class="filter-option">
-                                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="cart" id="card">
+                                <input class="filter-input filter-input-checkbox" type="checkbox" name="cart" id="card">
                                 <label for="cart">Корзина</label>
                             </li>
                         </ul>
@@ -95,7 +95,7 @@
             </section>
             <section class="catalog">
                 <div class="sort-wrapper">
-                    <legend>Сортировать:</legend>
+                    <div>Сортировать:</div>
                     <ul class="sort">
                         <li class="sort-current">По цене</li>
                         <li><a href="#">По типу</a></li>
@@ -108,7 +108,7 @@
                             </svg>
                         </li>
                         <li class="arrow arrow-last"><span class="visually-hidden">От меньшего к большему</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" ria-labelledby="upTitle upDesc">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" aria-labelledby="upTitle upDesc">
                                 <title id="upTitle">Вверх</title>
                                 <desc id="upDesc">Вверх</desc>
                                 <path id="arrow-up" fill="#ededed" d="M5.5 0L0 10h11z"/>
@@ -188,7 +188,7 @@
     </main>
     <footer class="main-footer">
         <section class="map">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada3356351a76b2561dfa51f807f6aea6f541556ff3edaf97e01038e775f930b4&amp;width=100%25&amp;height=416&amp;lang=ru_RU&amp;scroll=false"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada3356351a76b2561dfa51f807f6aea6f541556ff3edaf97e01038e775f930b4&amp;width=100%25&amp;height=416&amp;lang=ru_RU&amp;scroll=false;id=mymap"></script>
             <div class="map-wrapper">
                 <h2 class="visually-hidden">Как до нас добраться</h2>
                 <div class="map-flex">
@@ -238,6 +238,7 @@
         </div>
     </footer>
     <section class="modal write-us">
+        <h4 class="visually-hidden">Модальное окно с формой обратной связи</h4>
         <form class="write-us-form" onsubmit="return false" action="https://echo.nerds.ru" method="post">
             <div class="form-1st-row">
                 <span class="title">Напишите нам</span>
@@ -350,23 +351,18 @@
             kvast.onmouseout = function(e) {
                 document.getElementById('kvast-inner').style.display = 'none';
                 kvastHeader.style.fill = "#4d4d4d";
-
             };
         }
 
     </script>
-
     <script>
         var link = document.querySelector(".modal-link");
-
         var popup = document.querySelector(".write-us");
         var close = popup.querySelector(".modal-close");
-
         var form = popup.querySelector("form");
         var name = popup.querySelector("[name=name]");
         var email = popup.querySelector("[name=e-mail]");
         var text = popup.querySelector("[name=comment]");
-        //var storage = localStorage.getItem("name");
 
         link.addEventListener("click", function(evt) {
             evt.preventDefault();
@@ -393,12 +389,11 @@
                 return false;
             } else {
                 email.classList.remove("invalid");
+                localStorage.setItem("name", name.value);
+                localStorage.setItem("email", email.value);
+                localStorage.setItem("text", text.value);
+                popup.classList.remove("modal-show");
             }
-
-            localStorage.setItem("name", name.value);
-            localStorage.setItem("email", email.value);
-            localStorage.setItem("text", text.value);
-            popup.classList.remove("modal-show");
         });
 
         window.addEventListener("keydown", function(evt) {

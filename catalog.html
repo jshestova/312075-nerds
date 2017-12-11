@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Cтудия Нердс * Каталог</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize_minified.css">
     <link rel="stylesheet" href="css/main_minified.css">
 </head>
@@ -56,15 +57,15 @@
                         <ul>
                             <li class="filter-option">
                                 <input class="filter-input filter-input-radio" type="radio" name="grid" value="adaptive" id="filter-adaptive">
-                                <label for="filter-adaptive">Адаптивная</label>
+                                <label class="filter-label-radio" for="filter-adaptive">Адаптивная</label>
                             </li>
                             <li class="filter-option">
                                 <input class="filter-input filter-input-radio" type="radio" name="grid" value="fix" id="filter-fix">
-                                <label for="filter-fix">Фиксированная</label>
+                                <label class="filter-label-radio" for="filter-fix">Фиксированная</label>
                             </li>
                             <li class="filter-option">
                                 <input class="filter-input filter-input-radio" type="radio" name="grid" value="flex" id="filter-flex">
-                                <label for="filter-flex">Резиновая</label>
+                                <label class="filter-label-radio" for="filter-flex">Резиновая</label>
                             </li>
                         </ul>
                     </fieldset>
@@ -72,21 +73,21 @@
                         <legend>Особенности:</legend>
                         <ul>
                             <li class="filter-option">
-                                <input class="filter-input filter-input-checkbox" type="checkbox" name="slider" id="slider"><label for="slider">Слайдер</label>
+                                <input class="filter-input filter-input-checkbox" type="checkbox" name="slider" id="slider"><label class="filter-label-checkbox" for="slider">Слайдер</label>
                             </li>
                             <li class="filter-option">
-                                <input class="filter-input filter-input-checkbox" type="checkbox" name="benefits" id="benefits"><label for="benefits">Блок преимуществ</label>
+                                <input class="filter-input filter-input-checkbox" type="checkbox" name="benefits" id="benefits"><label class="filter-label-checkbox" for="benefits">Блок&nbsp;преимуществ</label>
                             </li>
                             <li class="filter-option">
-                                <input class="filter-input filter-input-checkbox" type="checkbox" name="news" id="news"><label for="news">Новости</label>
+                                <input class="filter-input filter-input-checkbox" type="checkbox" name="news" id="news"><label class="filter-label-checkbox" for="news">Новости</label>
                             </li>
                             <li class="filter-option">
                                 <input class="filter-input filter-input-checkbox" type="checkbox" name="gallery" id="gallery">
-                                <label for="gallery">Галерея</label>
+                                <label class="filter-label-checkbox" for="gallery">Галерея</label>
                             </li>
                             <li class="filter-option">
                                 <input class="filter-input filter-input-checkbox" type="checkbox" name="cart" id="cart">
-                                <label for="cart">Корзина</label>
+                                <label class="filter-label-checkbox" for="cart">Корзина</label>
                             </li>
                         </ul>
                     </fieldset>
@@ -196,9 +197,9 @@
                 <div class="map-flex">
                     <div class="contacts">
                         <h4>nёrds design studio</h4>
-                        <p class="color-gray">191186, Санкт-Петербург,<br> ул. Б. Конюшенная, д. 19/8</p>
+                        <p class="color-gray">191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
                         <p class="color-gray">тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p>
-                        <a class="button modal-link" href="#">Напишите нам</a>
+                        <a class="button modal-link js-btn" href="#">Напишите нам</a>
                     </div>
                 </div>
             </div>
@@ -239,7 +240,7 @@
             </div>
         </div>
     </footer>
-    <section class="modal write-us">
+    <section class="modal write-us js-fade fade-in is-paused">
         <h4 class="visually-hidden">Модальное окно с формой обратной связи</h4>
         <form class="write-us-form" onsubmit="return false" action="https://echo.nerds.ru" method="post">
             <div class="form-1st-row">
@@ -268,8 +269,10 @@
             <button class="button modal-button" type="submit">Отправить</button>
         </form>
     </section>
-    <script src="js/form_minified.js"></script>
-    <script src="js/catalog-item-hover_minified.js"></script>
+    <script src="js/script_minified.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

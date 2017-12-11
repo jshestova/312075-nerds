@@ -287,6 +287,10 @@ a.checkout:active {
     list-style: none;
 }
 
+.footer-wrapper {
+    min-width: 542px;
+}
+
 .footer-wrapper p {
     margin: 8px 0 20px 0;
 }
@@ -527,7 +531,7 @@ input[type=range]::-ms-thumb {
 }
 
 .filter ul {
-    line-height: 40px;
+    /*line-height: 40px;*/
 }
 
 .sort a {
@@ -703,6 +707,7 @@ input[type=range]::-ms-thumb {
     font-size: 55px;
     line-height: 55px;
     font-weight: 700;
+    width: 522px;
 }
 
 .slider-item p {
@@ -732,8 +737,8 @@ input[type=range]::-ms-thumb {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    /* Временно для сетки */
     min-height: 115px;
+    background-color: #eee;
 }
 
 .main-header-logo {
@@ -870,6 +875,8 @@ input[type=range]::-ms-thumb {
 .map {
     height: 416px;
     position: relative;
+    background-image: url(../img/map.jpg);
+    min-width: 1160px;
 }
 
 .map-flex {
@@ -890,8 +897,9 @@ input[type=range]::-ms-thumb {
 }
 
 .contacts a.button {
-    padding: 13px 45px;
+    padding: 13px 33px;
     margin-top: 20px;
+    width: 152px;
 }
 
 .footer-social-wrapper {
@@ -1175,49 +1183,61 @@ li svg:active #arrow-up {
 }
 
 .filter-grid {
-    margin: 58px 0 40px 0;
+    margin: 58px 0 30px 0;
 }
 
 .filter-features {
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
 .filter-input-radio {
-    height: 25px;
-    width: 25px;
     display: none;
 }
 
-.filter-input-radio + label::before {
-    position: relative;
-    content: url(../img/radio-off.svg);
-    top: 6px;
-    left: -8px;
-    padding-left: 8px;
+li.filter-option {
+    margin: 13px 0px 16px 0;
 }
 
-.filter-input-radio + label:hover::before {
-    content: url(../img/radio-off-black.svg);
+.filter-input-radio + .filter-label-radio {
+    display: inline-flex;
+    cursor: pointer;
+    outline: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/radio-sprite.svg);
+    background-repeat: no-repeat;
+    background-position: 0 -50px;
+    padding-left: 30px;
 }
 
-.filter-input-radio:disabled + label::before {
-    content: url(../img/radio-off-disabled.svg);
+.filter-input-radio:hover + .filter-label-radio {
+    background-image: url(../img/radio-sprite.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
 }
 
-.filter-input-radio:checked + label::before {
-    position: relative;
-    top: 6px;
-    content: url(../img/radio-on.svg);
-    left: -8px;
-    padding-left: 8px;
+.filter-input-radio:disabled + .filter-label-radio {
+    background-image: url(../img/radio-sprite.svg);
+    background-position: 0 -25px;
+    background-repeat: no-repeat;
 }
 
-.filter-input-radio:checked:hover + label::before {
-    content: url(../img/radio-on-black.svg);
+.filter-input-radio:checked + .filter-label-radio {
+    background-image: url(../img/radio-sprite.svg);
+    background-position: 0 -125px;
+    background-repeat: no-repeat;
 }
 
-.filter-input-radio:checked:disabled + label::before {
-    content: url(../img/radio-on-disabled.svg);
+.filter-input-radio:checked:hover + .filter-label-radio {
+    background-image: url(../img/radio-sprite.svg);
+    background-position: 0 -75px;
+    background-repeat: no-repeat;
+}
+
+.filter-input-radio:checked:disabled + .filter-label-radio {
+    background-image: url(../img/radio-sprite.svg);
+    background-position: 0 -100px;
+    background-repeat: no-repeat;
 }
 
 .filter-option label:hover {
@@ -1230,36 +1250,46 @@ li svg:active #arrow-up {
     display: none;
 }
 
-.filter-input-checkbox + label::before {
-    position: relative;
-    top: 6px;
-    content: url(../img/checkbox-off-gray.svg);
-    left: -8px;
-    padding-left: 8px;
+.filter-input-checkbox + .filter-label-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    outline: 0;
+    width: 27px;
+    height: 23px;
+    background-image: url(../img/checkbox-sprite.svg);
+    background-repeat: no-repeat;
+    background-position: 0 -23px;
+    padding-left: 30px;
 }
 
-.filter-input-checkbox + label:hover::before {
-    content: url(../img/checkbox-off.svg);
+.filter-input-checkbox:hover + .filter-label-checkbox {
+    background-image: url(../img/checkbox-sprite.svg);
+    background-position: 0 -46px;
+    background-repeat: no-repeat;
 }
 
-.filter-input-checkbox:disabled + label::before {
-    content: url(../img/checkbox-off-disabled.svg);
+.filter-input-checkbox:disabled + .filter-label-checkbox {
+    background-image: url(../img/checkbox-sprite.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
 }
 
-.filter-input-checkbox:checked + label::before {
-    position: relative;
-    top: 6px;
-    content: url(../img/checkbox-on-gray.svg);
-    left: -8px;
-    padding-left: 8px;
+.filter-input-checkbox:checked + .filter-label-checkbox {
+    background-image: url(../img/checkbox-sprite.svg);
+    background-position: 0 -92px;
+    background-repeat: no-repeat;
 }
 
-.filter-input-checkbox:checked + label:hover::before {
-    content: url(../img/checkbox-on.svg);
+.filter-input-checkbox:checked:hover + .filter-label-checkbox {
+    background-image: url(../img/checkbox-sprite.svg);
+    background-position: 0 -115px;
+    background-repeat: no-repeat;
 }
 
-.filter-input-checkbox:checked:disabled + label::before {
-    content: url(../img/checkbox-on-disabled.svg);
+.filter-input-checkbox:checked:disabled + .filter-label-checkbox {
+    background-image: url(../img/checkbox-sprite.svg);
+    background-position: 0 -69px;
+    background-repeat: no-repeat;
 }
 
 .pagination-list {
@@ -1305,14 +1335,47 @@ li svg:active #arrow-up {
 }
 
 @keyframes shake {
-    from {
-        transform: rotate(0deg);
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
     }
-    to {
-        transform: rotate(360deg);
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
     }
 }
 
 .modal-error {
     animation: shake 0.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn .5s ease-in 1 forwards;
+}
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.is-paused {
+    animation-play-state: paused;
 }
